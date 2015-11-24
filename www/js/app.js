@@ -21,6 +21,10 @@ angular.module('app', ['ionic', 'user'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+    .state('main', {
+      url: '/',
+      template: '<p>Main</p>'
+    })
     .state('users', {
       url: '/users',
       templateUrl: 'modules/users/login.html'

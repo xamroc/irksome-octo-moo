@@ -15,15 +15,23 @@ angular.module('user', [])
 })
 
 .service('AuthenticationService', function($timeout) {
+  var isAuthenticated = false;
   this.Login = function(email, password, callback) {
     var response;
     $timeout(function() {
       if (email === 'test' && password === 'test') {
+        isAuthenticated = true;
         response = { success: true };
       } else {
         response =  { success: false, message: 'Email or password is incorrect' };
       }
       callback(response);
     }, 1000);
+  }
+  this.Logout = function() {
+    isAuthenticated = false;
+  }
+  this.isAuthenticated = function() {
+    return isAuthenticated;
   }
 });

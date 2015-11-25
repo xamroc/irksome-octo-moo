@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('app', ['ionic', 'user'])
+angular.module('app', ['ionic', 'user', 'dashboard'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $location, AuthenticationService) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -15,6 +15,14 @@ angular.module('app', ['ionic', 'user'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    $rootScope.$on('$locationChangeStart', function() {
+      console.log(AuthenticationService.isAuthenticated());
+      if ($location.path() !== '/users' && !AuthenticationService.isAuthenticated()) {
+        $location.path('/users');
+      } else if ($location.path() === '/users' && AuthenticationService.isAuthenticated()) {
+        $location.path('/');
+      }
+    })
   });
 })
 
@@ -23,11 +31,13 @@ angular.module('app', ['ionic', 'user'])
   $stateProvider
     .state('main', {
       url: '/',
-      template: '<p>Main</p>'
+      templateUrl: 'modules/dashboard/overview.html',
+      controller: 'DashboardCtrl'
     })
     .state('users', {
       url: '/users',
-      templateUrl: 'modules/users/login.html'
+      templateUrl: 'modules/users/login.html',
+      controller: 'UserCtrl'
     })
 
   $urlRouterProvider.otherwise('/users');

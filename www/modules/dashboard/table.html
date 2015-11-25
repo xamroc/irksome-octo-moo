@@ -1,0 +1,25 @@
+<ion-header-bar class="bar-stable">
+  <h1 class="title">Your Personal Investments</h1>
+</ion-header-bar>
+<ion-content ng-controller="DashboardCtrl">
+  <div class="card" ng-click="overview()">
+    <div class="list list-inset">
+      <div class="item item-divider">
+        <div class="row row-center">
+          <div class="col col-25">Ticker</div>
+          <div class="col col-25">Price</div>
+          <div class="col col-25">Shares</div>
+          <div class="col col-25">Value</div>
+        </div>
+      </div>
+      <label class="item" ng-repeat="item in sData">
+        <div class="row row-center">
+          <div class="col col-25">{{item.ticker}}</div>
+          <div class="col col-25">{{item.price}}</div>
+          <div class="col col-25">{{item.shares}}</div>
+          <div class="col col-25">{{item.value}}</div>
+        </div>
+      </label>
+    </div>
+  </div>
+</ion-content>

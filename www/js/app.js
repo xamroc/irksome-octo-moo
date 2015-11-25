@@ -39,6 +39,11 @@ angular.module('app', ['ionic', 'user', 'dashboard'])
       templateUrl: 'modules/users/login.html',
       controller: 'UserCtrl'
     })
+    .state('table', {
+      url: '/table',
+      templateUrl: 'modules/dashboard/table.html',
+      controller: 'DashboardCtrl'
+    })
 
   $urlRouterProvider.otherwise('/users');
 })

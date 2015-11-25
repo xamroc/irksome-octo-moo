@@ -2,7 +2,8 @@
   <h1 class="title">Your Personal Investment Portfolio</h1>
 </ion-header-bar>
 <ion-content ng-controller="DashboardCtrl">
-  <div class="card">
+
+  <div class="card" ng-click="detailView()">
     <div class="list list-inset">
       <div class="item item-divider">
         <div class="row row-center">
@@ -21,7 +22,24 @@
         </div>
       </label>
     </div>
+  </div>
 
+  <div class="card">
+    <div class="item item-divider">
+      Portfolio History
+    </div>
+    <div class="item item-text-wrap">
+      <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="{showTooltips: false}"></canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item item-divider">
+      Portfolio Allocation
+    </div>
+    <div class="item item-text-wrap">
+      <canvas id="doughnut" class="chart chart-doughnut" chart-data="dData" chart-labels="dLabels" chart-options="{tooltipTemplate: '<%=label%>:<%=value%>%'}"></canvas>
+    </div>
   </div>
   <button class="button button-block button-positive" ng-click="logout()">Logout</button>
 </ion-content>

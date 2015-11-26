@@ -6,19 +6,19 @@
   <div class="card" ng-click="detailView()">
     <div class="list list-inset">
       <div class="item item-divider">
-        <div class="row row-center">
-          <div class="col col-25">Ticker</div>
-          <div class="col col-25">Price</div>
-          <div class="col col-25">Shares</div>
-          <div class="col col-25">Value</div>
+        <div class="row">
+          <div class="col col-25 text-center">Ticker</div>
+          <div class="col col-25 text-center">Price</div>
+          <div class="col col-25 text-center">Shares</div>
+          <div class="col col-25 text-center">Value</div>
         </div>
       </div>
       <label class="item" ng-repeat="item in sData | limitTo:5">
-        <div class="row row-center">
-          <div class="col col-25">{{item.ticker}}</div>
-          <div class="col col-25">{{item.price}}</div>
-          <div class="col col-25">{{item.shares}}</div>
-          <div class="col col-25">{{item.value}}</div>
+        <div class="row">
+          <div class="col col-25 text-center">{{item.ticker}}</div>
+          <div class="col col-25 text-center">{{item.price}}</div>
+          <div class="col col-25 text-center">{{item.shares}}</div>
+          <div class="col col-25 text-right">{{item.value}}</div>
         </div>
       </label>
     </div>

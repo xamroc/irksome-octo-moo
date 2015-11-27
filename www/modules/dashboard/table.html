@@ -12,7 +12,7 @@
           <div class="col col-25 text-center">Value</div>
         </div>
       </div>
-      <label class="item" ng-repeat="item in sData">
+      <a href="#/table/{{item.id}}" class="item" ng-repeat="item in sData">
         <div class="row">
           <div class="col col-25 text-center">{{item.ticker}}</div>
           <div class="col col-25 text-center">{{item.price}}</div>

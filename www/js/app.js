@@ -16,7 +16,6 @@ angular.module('app', ['ionic', 'user', 'dashboard'])
       StatusBar.styleDefault();
     }
     $rootScope.$on('$locationChangeStart', function() {
-      console.log(AuthenticationService.isAuthenticated());
       if ($location.path() !== '/users' && !AuthenticationService.isAuthenticated()) {
         $location.path('/users');
       } else if ($location.path() === '/users' && AuthenticationService.isAuthenticated()) {
@@ -43,6 +42,10 @@ angular.module('app', ['ionic', 'user', 'dashboard'])
       url: '/table',
       templateUrl: 'modules/dashboard/table.html',
       controller: 'DashboardCtrl'
+    })
+    .state('tableDetail', {
+      url: '/table/:tableId',
+      templateUrl: 'modules/dashboard/table.detail.html'
     })
 
   $urlRouterProvider.otherwise('/users');

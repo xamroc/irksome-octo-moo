@@ -36,6 +36,23 @@ angular.module('dashboard', ['user', "chart.js"])
   ]
 })
 
+.controller('TableCtrl', function($scope, $stateParams, $location, securitiesData) {
+  securitiesData.list(function(sData) {
+    for (var i = 0; i < sData.length; i++) {
+      var data = JSON.parse(sData[i]);
+      if(data.id == $stateParams.tableId) {
+        $scope.sData = data;
+      }
+    }
+  });
+  $scope.overview = function() {
+    $location.path('/');
+  }
+  $scope.tableView = function() {
+    $location.path('/table');
+  }
+})
+
 .factory('securitiesData', function ($http) {
   return {
     list: function(callback) {

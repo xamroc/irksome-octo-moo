@@ -2,21 +2,18 @@
 
 angular.module('dashboard', ['user', "chart.js"])
 
-.controller('DashboardCtrl', function($scope, $location, $http, AuthenticationService) {
-  $http.get('json/securities.json')
-    .success(function(data, status, headers, config) {
-      $scope.sData = data.map(JSON.parse)
-    })
-    .error(function(data, status, headers, config) {
-      console.log(status);
-    })
+.controller('DashboardCtrl', function($scope, $location, $http, AuthenticationService, securitiesData) {
+
+  securitiesData.list(function(sData) {
+    $scope.sData = sData.map(JSON.parse);
+  });
 
   $scope.logout = function() {
     AuthenticationService.Logout();
     $location.path('/users');
   }
-  $scope.detailView = function() {
-    $location.path('table');
+  $scope.tableView = function() {
+    $location.path('/table');
   }
   $scope.overview = function() {
     $location.path('/');
@@ -37,4 +34,16 @@ angular.module('dashboard', ['user', "chart.js"])
     {title: 'CFG', value: 1.01, change: '2.14%', volume: '19,716,483'},
     {title: 'CYAN', value: 1.07, change: '1.05%', volume: '19,864,360'}
   ]
+})
+
+.factory('securitiesData', function ($http) {
+  return {
+    list: function(callback) {
+      $http.get('json/securities.json')
+        .success(callback)
+        .error(function(data, status, headers, config) {
+          console.error(status);
+        });
+    }
+  }
 })

@@ -15,8 +15,43 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$green-cactus:                    #23DB87;
+$white-text:                      #F1FFFF;
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+// Login Page
+
+#login {
+  background-color: $green-cactus;
+
+  .row, .scroll {
+    height: 100%;
+  }
+
+  h1 {
+    text-align: center;
+    color: $white-text;
+  }
+
+  .login-button {
+    background-color: $green-cactus;
+    border-color: $green-cactus;
+    text-align: center;
+
+    button {
+      background-color: $white-text;
+      color: $green-cactus;
+      border-color: $green-cactus;
+    }
+
+    button:hover {
+      background-color: $balanced;
+      color: white;
+    }
+  }
+}

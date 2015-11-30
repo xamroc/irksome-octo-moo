@@ -1,19 +1,23 @@
-<ion-header-bar>
-  <h1 class="title">Sign In</h1>
-</ion-header-bar>
-<ion-content ng-controller="UserCtrl">
-  <form ng-submit="login()">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <input type="text" placeholder="Email" ng-model="loginData.email">
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Password" ng-model="loginData.password">
-      </label>
-      <label class="item">
-        <button class="button button-block button-positive">Login with Username / Email
-        </button>
-      </label>
+<ion-content id="login" ng-controller="UserCtrl">
+  <div class="row row-center">
+  <!-- <div class="row row-center login"> -->
+    <div class="col">
+      <h1>Sign in</h1>
+      <form ng-submit="login()">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Email" ng-model="loginData.email">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="loginData.password">
+          </label>
+          <label class="item login-button">
+            <button class="button">Login with Username / Email
+            </button>
+          </label>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </ion-content>

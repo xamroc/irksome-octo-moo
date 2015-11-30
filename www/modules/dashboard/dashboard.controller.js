@@ -12,12 +12,7 @@ angular.module('dashboard', ['user', "chart.js"])
     AuthenticationService.Logout();
     $location.path('/users');
   }
-  $scope.tableView = function() {
-    $location.path('/table');
-  }
-  $scope.overview = function() {
-    $location.path('/');
-  }
+
   $scope.labels = ["10", "20", "30", "40", "50", "60", "70"];
   $scope.series = ['Series A', 'Series B'];
   $scope.data = [

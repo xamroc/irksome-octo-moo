@@ -2,15 +2,15 @@
   <h1 class="title">Your Personal Investments</h1>
 </ion-header-bar>
 <ion-content ng-controller="DashboardCtrl">
-  <div class="card" ng-click="overview()">
+  <div class="card">
     <div class="list list-inset">
       <div class="item item-divider">
-        <div class="row">
+        <a href="#/" class="row">
           <div class="col col-25 text-center">Ticker</div>
           <div class="col col-25 text-center">Price</div>
           <div class="col col-25 text-center">Shares</div>
           <div class="col col-25 text-center">Value</div>
-        </div>
+        </a>
       </div>
       <a href="#/table/{{item.id}}" class="item" ng-repeat="item in sData">
         <div class="row">

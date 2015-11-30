@@ -40,12 +40,6 @@ angular.module('dashboard', ['user', "chart.js"])
       }
     }
   });
-  $scope.overview = function() {
-    $location.path('/');
-  }
-  $scope.tableView = function() {
-    $location.path('/table');
-  }
 })
 
 .factory('securitiesData', function ($http) {

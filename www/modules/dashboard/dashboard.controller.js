@@ -14,11 +14,11 @@ angular.module('dashboard', ['user', "chart.js"])
   }
 
   $scope.labels = ["10", "20", "30", "40", "50", "60", "70"];
-  $scope.series = ['Series A', 'Series B'];
+  $scope.series = ['Optimistic', 'Normal', 'Pessimistic'];
   $scope.data = [
-    [65000, 59000, 80000, 81000, 56000, 55000, 40000],
-    [28000, 48000, 40000, 19000, 86000, 27000, 90000],
-    [18000, 38000, 42000, 29000, 85000, 17000, 40000]
+    [30000, 27000, 30000, 34000, 32000, 36000, 40000],
+    [30000, 25000, 27500, 30000, 31000, 34000, 35000],
+    [30000, 20000, 21000, 23000, 19000, 22000, 31000]
   ];
   $scope.dLabels = ["Developed Markets", "Domestic Markets", "Emerging Markets", "Commodity", "Fixed-Income"];
   $scope.dData = [5, 15, 5, 7, 68];

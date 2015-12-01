@@ -16,6 +16,7 @@ $dark:                            #444 !default;
 */
 
 $green-cactus:                    #23DB87;
+$orange-cactus:                   #FF795B;
 $white-text:                      #F1FFFF;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -23,6 +24,22 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+// Headers
+
+.bar-cactus {
+  background-color: $orange-cactus;
+  border-color: $orange-cactus;
+  h1 {
+    color: $white-text;
+  }
+}
+
+// Text
+
+.uppercase {
+  text-transform: uppercase;
+}
 
 // Login Page
 
@@ -55,3 +72,18 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     }
   }
 }
+
+// Dashboard Overview
+
+.dashboard-overview-summary {
+  width: 100vw;
+  height: 25vh;
+  background-color: $orange-cactus;
+  color: $white-text;
+
+  h1 {
+    color: $white-text;
+    font-weight: 300;
+  }
+}
+

@@ -1,7 +1,16 @@
-<ion-header-bar class="bar-stable">
-  <h1 class="title">Your Personal Investment Portfolio</h1>
+<ion-header-bar class="bar-cactus">
+  <div class="header-alt">
+    <h1 class="title">Your Portfolio</h1>
+  </div>
 </ion-header-bar>
 <ion-content ng-controller="DashboardCtrl">
+
+  <div class="dashboard-overview-summary row row-center">
+    <div class="col text-center">
+      <h1>{{totalValue}}</h1>
+      <p class="uppercase">Total balance</p>
+    </div>
+  </div>
 
   <div class="card">
     <a href="#/table">

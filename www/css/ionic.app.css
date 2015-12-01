@@ -9089,6 +9089,15 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.bar-cactus {
+  background-color: #FF795B;
+  border-color: #FF795B; }
+  .bar-cactus h1 {
+    color: #F1FFFF; }
+
+.uppercase {
+  text-transform: uppercase; }
+
 #login {
   background-color: #23DB87; }
   #login .row, #login .scroll {
@@ -9107,3 +9116,12 @@ a.button {
     #login .login-button button:hover {
       background-color: #33cd5f;
       color: white; }
+
+.dashboard-overview-summary {
+  width: 100vw;
+  height: 25vh;
+  background-color: #FF795B;
+  color: #F1FFFF; }
+  .dashboard-overview-summary h1 {
+    color: #F1FFFF;
+    font-weight: 300; }

@@ -6,9 +6,10 @@ angular.module('dashboard', ['user', "chart.js"])
 
   securitiesData.list(function(sData) {
     $scope.sData = sData.map(JSON.parse);
-    var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
-    var names = _.pluck(stooges, 'name');
-    console.log(names);
+    var values = _.pluck($scope.sData, 'value');
+    var parsedValues = values.map(JSON.parse);
+    var totalValue = _.reduce(parsedValues, function(total, x) { return total + x }, 0).toFixed(2);
+    $scope.totalValue = numeral(totalValue).format('$0,0.00');
   });
 
   $scope.logout = function() {

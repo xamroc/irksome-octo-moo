@@ -6,6 +6,9 @@ angular.module('dashboard', ['user', "chart.js"])
 
   securitiesData.list(function(sData) {
     $scope.sData = sData.map(JSON.parse);
+    var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+    var names = _.pluck(stooges, 'name');
+    console.log(names);
   });
 
   $scope.logout = function() {

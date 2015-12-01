@@ -17,6 +17,7 @@ $dark:                            #444 !default;
 
 $green-cactus:                    #23DB87;
 $orange-cactus:                   #FF795B;
+$gray-text:                       #C7CECF;
 $white-text:                      #F1FFFF;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -103,4 +104,33 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .dashboard-chart-text-wrap {
   border-color: transparent;
+}
+
+// Table View
+
+.ticker-container {
+  p {
+    display: inline-block;
+    span {
+      display: block;
+    }
+  }
+}
+
+p.ticker {
+  font-size: larger;
+}
+
+span.share-subtext {
+  color: $gray-text;
+  font-size: small;
+  font-weight: bold;
+}
+
+div.price-box {
+  background-color: $green-cactus;
+  border-radius: 5px;
+  p {
+    color: $white-text;
+  }
 }

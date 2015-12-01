@@ -9138,3 +9138,22 @@ a.button {
 
 .dashboard-chart-text-wrap {
   border-color: transparent; }
+
+.ticker-container p {
+  display: inline-block; }
+  .ticker-container p span {
+    display: block; }
+
+p.ticker {
+  font-size: larger; }
+
+span.share-subtext {
+  color: #C7CECF;
+  font-size: small;
+  font-weight: bold; }
+
+div.price-box {
+  background-color: #23DB87;
+  border-radius: 5px; }
+  div.price-box p {
+    color: #F1FFFF; }

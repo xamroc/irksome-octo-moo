@@ -9091,7 +9091,8 @@ a.button {
 
 .bar-cactus {
   background-color: #FF795B;
-  border-color: #FF795B; }
+  border-color: #FF795B;
+  box-shadow: 0 1px 5px #444; }
   .bar-cactus h1 {
     color: #F1FFFF; }
 
@@ -9119,9 +9120,21 @@ a.button {
 
 .dashboard-overview-summary {
   width: 100vw;
-  height: 25vh;
+  height: 40vh;
   background-color: #FF795B;
   color: #F1FFFF; }
-  .dashboard-overview-summary h1 {
+  .dashboard-overview-summary h1, .dashboard-overview-summary h3 {
     color: #F1FFFF;
     font-weight: 300; }
+  .dashboard-overview-summary hr {
+    border-top-color: transparent;
+    width: 10%; }
+
+.dashboard-chart-divider {
+  background-color: transparent;
+  border-color: transparent; }
+  .dashboard-chart-divider h2 {
+    color: #387ef5; }
+
+.dashboard-chart-text-wrap {
+  border-color: transparent; }

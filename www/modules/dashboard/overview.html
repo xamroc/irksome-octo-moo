@@ -1,54 +1,41 @@
 <ion-header-bar class="bar-cactus">
-  <div class="header-alt">
-    <h1 class="title">Your Portfolio</h1>
-  </div>
+  <h1 class="title">Your Portfolio</h1>
 </ion-header-bar>
-<ion-content ng-controller="DashboardCtrl">
+<ion-content has-bouncing="false" ng-controller="DashboardCtrl">
 
-  <div class="dashboard-overview-summary row row-center">
+  <div class="dashboard-overview-summary row row-center" ui-sref="table">
     <div class="col text-center">
       <h1>{{totalValue}}</h1>
       <p class="uppercase">Total balance</p>
+      <hr />
+      <h3>+$20,942.23</h3>
+      <p class="uppercase">Total earnings</p>
     </div>
   </div>
 
   <div class="card">
-    <a href="#/table">
-      <div class="list list-inset">
-        <div class="item item-divider">
-          <div class="row">
-            <div class="col col-25 text-center">Ticker</div>
-            <div class="col col-25 text-center">Price</div>
-            <div class="col col-25 text-center">Shares</div>
-            <div class="col col-25 text-center">Value</div>
-          </div>
-        </div>
-        <label class="item" ng-repeat="item in sData | limitTo:5">
-          <div class="row">
-            <div class="col col-25 text-center">{{item.ticker}}</div>
-            <div class="col col-25 text-center">{{item.price}}</div>
-            <div class="col col-25 text-center">{{item.shares}}</div>
-            <div class="col col-25 text-right">{{item.value}}</div>
-          </div>
-        </label>
-      </div>
-    </a>
-  </div>
-
-  <div class="card">
-    <div class="item item-divider">
-      Portfolio History
+    <div class="item item-divider dashboard-chart-divider">
+      <h2>Portfolio History</h2>
     </div>
-    <div class="item item-text-wrap">
+    <div class="item item-text-wrap dashboard-chart-text-wrap">
       <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="{showTooltips: false}"></canvas>
     </div>
   </div>
 
   <div class="card">
-    <div class="item item-divider">
-      Portfolio Allocation
+    <div class="item item-divider dashboard-chart-divider">
+      <h2>Predicted Performance</h2>
     </div>
-    <div class="item item-text-wrap">
+    <div class="item item-text-wrap dashboard-chart-text-wrap">
+      <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="{showTooltips: false}"></canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item item-divider dashboard-chart-divider">
+      <h2>Portfolio Allocation</h2>
+    </div>
+    <div class="item item-text-wrap dashboard-chart-text-wrap">
       <canvas id="doughnut" class="chart chart-doughnut" chart-data="dData" chart-labels="dLabels" chart-options="{tooltipTemplate: '<%=label%>:<%=value%>%'}"></canvas>
     </div>
   </div>

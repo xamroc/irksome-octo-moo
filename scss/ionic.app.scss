@@ -30,6 +30,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .bar-cactus {
   background-color: $orange-cactus;
   border-color: $orange-cactus;
+  box-shadow: 0 1px 5px $dark;
   h1 {
     color: $white-text;
   }
@@ -77,13 +78,29 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .dashboard-overview-summary {
   width: 100vw;
-  height: 25vh;
+  height: 40vh;
   background-color: $orange-cactus;
   color: $white-text;
 
-  h1 {
+  h1, h3 {
     color: $white-text;
     font-weight: 300;
   }
+
+  hr {
+    border-top-color: transparent;
+    width: 10%;
+  }
 }
 
+.dashboard-chart-divider {
+  background-color: transparent;
+  border-color: transparent;
+  h2 {
+    color: $positive;
+  }
+}
+
+.dashboard-chart-text-wrap {
+  border-color: transparent;
+}

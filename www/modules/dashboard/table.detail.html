@@ -1,28 +1,15 @@
-<ion-header-bar class="bar-stable">
-  <h1 class="title">Table Detail View</h1>
-</ion-header-bar>
-<ion-content ng-controller="TableCtrl">
-  <div class="card">
-    <div class="row">
-      <div class="col col-25">{{sData.ticker}}</div>
-      <div class="col col-50">{{sData.companyName}}</div>
-      <div class="col col-25">{{sData.price}}</div>
-    </div>
-    <div class="row">
-      <div class="col col-25">Shares:</div>
-      <div class="col col-75">{{sData.shares}}</div>
-    </div>
-    <div class="row">
-      <div class="col col-25">Value:</div>
-      <div class="col col-75">{{sData.value}}</div>
+<ion-content has-bouncing="false" ng-controller="TableCtrl">
+  <div class="row row-center detail-price-section">
+    <div class="col text-center">
+      <h1>{{sData.price}}</h1>
     </div>
   </div>
-  <div class="row">
-    <div class="col col-50">
-      <a href="#/" class="button icon-right button-positive">Overview</a>
+  <div class="row row-center detail-value-section">
+    <div class="col col-33 text-center ticker-container">
+      <p class="detail-title">{{sData.shares}}<span class="detail-subtext uppercase">Your shares</span></p>
     </div>
-    <div class="col col-25 col-offset-25">
-      <a href="#/table" class="button icon-right button-positive">Back</a>
+    <div class="col col-67 text-center ticker-container">
+      <p class="detail-title">{{sData.value}}<span class="detail-subtext uppercase">Total Value</span></p>
     </div>
   </div>
 </ion-content>

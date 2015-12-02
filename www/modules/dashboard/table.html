@@ -2,26 +2,16 @@
   <h1 class="title">Securities</h1>
 </ion-header-bar>
 <ion-content has-bouncing="false" ng-controller="TableCtrl">
-  <!-- <div class="card"> -->
-    <div class="list">
-      <!-- <div class="item item-divider">
-        <a href="#/" class="row">
-          <div class="col col-25 text-center">Ticker</div>
-          <div class="col col-25 text-center">Price</div>
-          <div class="col col-25 text-center">Shares</div>
-          <div class="col col-25 text-center">Value</div>
-        </a>
-      </div> -->
-      <a href="#/table/{{item.id}}" class="item" ng-repeat="item in sData">
-        <div class="row row-center">
-          <div class="col col-75 ticker-container">
-            <p class="ticker">{{item.ticker}}<span class="share-subtext">{{item.shares}} shares</span></p>
-          </div>
-          <div class="col col-25 text-center price-box">
-            <p>${{item.price}}</p>
-          </div>
+  <div class="list">
+    <a href="#/table/{{item.id}}" class="item" ng-repeat="item in sData">
+      <div class="row row-center">
+        <div class="col col-75 ticker-container">
+          <p class="ticker">{{item.ticker}}<span class="share-subtext">{{item.shares}} shares</span></p>
         </div>
-      </a>
-    </div>
-  <!-- </div> -->
+        <div class="col col-25 text-center price-box">
+          <p>${{item.price}}</p>
+        </div>
+      </div>
+    </a>
+  </div>
 </ion-content>

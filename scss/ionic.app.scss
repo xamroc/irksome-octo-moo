@@ -134,3 +134,37 @@ div.price-box {
     color: $white-text;
   }
 }
+
+div.detail-price-section {
+  width: 100vw;
+  height: 60vh;
+  background-color: $orange-cactus;
+  color: $white-text;
+
+  h1 {
+    color: $white-text;
+    font-weight: 300;
+  }
+}
+
+div.detail-value-section {
+  width: 100vw;
+  height: 40vh;
+  background-color: $orange-cactus;
+  color: $white-text;
+
+  h1 {
+    color: $white-text;
+    font-weight: 300;
+  }
+}
+
+p.detail-title {
+  font-size: 25px;
+}
+
+span.detail-subtext {
+  color: $gray-text;
+  font-size: x-small;
+  font-weight: bold;
+}

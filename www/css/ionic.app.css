@@ -9157,3 +9157,29 @@ div.price-box {
   border-radius: 5px; }
   div.price-box p {
     color: #F1FFFF; }
+
+div.detail-price-section {
+  width: 100vw;
+  height: 60vh;
+  background-color: #FF795B;
+  color: #F1FFFF; }
+  div.detail-price-section h1 {
+    color: #F1FFFF;
+    font-weight: 300; }
+
+div.detail-value-section {
+  width: 100vw;
+  height: 40vh;
+  background-color: #FF795B;
+  color: #F1FFFF; }
+  div.detail-value-section h1 {
+    color: #F1FFFF;
+    font-weight: 300; }
+
+p.detail-title {
+  font-size: 25px; }
+
+span.detail-subtext {
+  color: #C7CECF;
+  font-size: x-small;
+  font-weight: bold; }

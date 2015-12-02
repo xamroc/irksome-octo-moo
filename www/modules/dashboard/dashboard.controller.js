@@ -40,7 +40,15 @@ angular.module('dashboard', ['user', "chart.js"])
     for (var i = 0; i < sData.length; i++) {
       var data = JSON.parse(sData[i]);
       if(data.id == $stateParams.tableId) {
-        $scope.sData = data;
+        var price = numeral(data.price).format('$0,0.00');
+        var value = numeral(data.value).format('$0,0.00');
+        $scope.sData = { id: data.id,
+                         companyName: data.companyName,
+                         price: price,
+                         shares: data.shares,
+                         ticker: data.ticker,
+                         value: value,
+                         category: data.category };
       }
     }
   });

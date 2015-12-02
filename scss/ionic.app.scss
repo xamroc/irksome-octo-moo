@@ -37,6 +37,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   }
 }
 
+// Icons
+
+.white-icon {
+  color: $white-text;
+}
+
 // Text
 
 .uppercase {
@@ -135,13 +141,21 @@ div.price-box {
   }
 }
 
+.detail-bar {
+  background-color: $orange-cactus;
+  border-color: $orange-cactus;
+  p {
+    color: $white-text;
+  }
+}
+
 div.detail-price-section {
   width: 100vw;
   height: 60vh;
   background-color: $orange-cactus;
   color: $white-text;
 
-  h1 {
+  h1, h3 {
     color: $white-text;
     font-weight: 300;
   }

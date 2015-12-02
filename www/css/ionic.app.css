@@ -9096,6 +9096,9 @@ a.button {
   .bar-cactus h1 {
     color: #F1FFFF; }
 
+.white-icon {
+  color: #F1FFFF; }
+
 .uppercase {
   text-transform: uppercase; }
 
@@ -9158,12 +9161,18 @@ div.price-box {
   div.price-box p {
     color: #F1FFFF; }
 
+.detail-bar {
+  background-color: #FF795B;
+  border-color: #FF795B; }
+  .detail-bar p {
+    color: #F1FFFF; }
+
 div.detail-price-section {
   width: 100vw;
   height: 60vh;
   background-color: #FF795B;
   color: #F1FFFF; }
-  div.detail-price-section h1 {
+  div.detail-price-section h1, div.detail-price-section h3 {
     color: #F1FFFF;
     font-weight: 300; }
 

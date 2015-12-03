@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('dashboard', ['user', "chart.js"])
+angular.module('dashboard', ['user', 'chart.js', 'ionic.contrib.drawer.vertical'])
 
-.controller('DashboardCtrl', function($scope, $location, $http, AuthenticationService, securitiesData) {
+.controller('DashboardCtrl', function($scope, $location, $http, AuthenticationService, securitiesData, $ionDrawerVerticalDelegate) {
 
   securitiesData.list(function(sData) {
     $scope.sData = sData.map(JSON.parse);
@@ -15,6 +15,24 @@ angular.module('dashboard', ['user', "chart.js"])
   $scope.logout = function() {
     AuthenticationService.Logout();
     $location.path('/users');
+  }
+
+  $scope.fundText = "Add Funds";
+  $scope.drawerClass = "bar bar-positive";
+
+  $scope.drawerIsClosed = function() {
+    return $ionDrawerVerticalDelegate.getState() === 'closed';
+  }
+
+  $scope.toggleDrawer = function() {
+    $ionDrawerVerticalDelegate.toggleDrawer();
+    if ($scope.drawerClass === "bar bar-positive") {
+      $scope.drawerClass = "bar bar-assertive";
+      $scope.fundText = "Close";
+    } else {
+      $scope.drawerClass = "bar bar-positive";
+      $scope.fundText = "Add Funds"
+    }
   }
 
   $scope.labels = ["10", "20", "30", "40", "50", "60", "70"];

@@ -1,48 +1,71 @@
-<ion-header-bar class="bar-cactus">
-  <h1 class="title">Your Portfolio</h1>
-  <div class="buttons">
-    <button class="button button-clear" ng-click="logout()"><i class="icon ion-log-out white-icon"></i></button>
-  </div>
-</ion-header-bar>
-<ion-content has-bouncing="false" ng-controller="DashboardCtrl">
+<div ng-controller="DashboardCtrl">
+  <ion-header-bar class="bar-cactus">
+    <h1 class="title">Your Portfolio</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()"><i class="icon ion-log-out white-icon"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content has-bouncing="false">
 
-  <div class="dashboard-overview-summary row row-center" ui-sref="table">
-    <div class="col text-center">
-      <h1>{{totalValue}}</h1>
-      <p class="uppercase">Total balance</p>
-      <hr />
-      <h3>+$20,942.23</h3>
-      <p class="uppercase">Total earnings</p>
+    <div class="dashboard-overview-summary row row-center" ui-sref="table">
+      <div class="col text-center">
+        <h1>{{totalValue}}</h1>
+        <p class="uppercase">Total balance</p>
+        <hr />
+        <h3>+$20,942.23</h3>
+        <p class="uppercase">Total earnings</p>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="item item-divider dashboard-chart-divider">
-      <h2>Portfolio History</h2>
+    <div class="card">
+      <div class="item item-divider dashboard-chart-divider">
+        <h2>Portfolio History</h2>
+      </div>
+      <div class="item item-text-wrap dashboard-chart-text-wrap">
+        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="{showTooltips: false}"></canvas>
+      </div>
     </div>
-    <div class="item item-text-wrap dashboard-chart-text-wrap">
-      <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="{showTooltips: false}"></canvas>
-    </div>
-  </div>
 
-  <div class="card">
-    <div class="item item-divider dashboard-chart-divider">
-      <h2>Predicted Performance</h2>
+    <div class="card">
+      <div class="item item-divider dashboard-chart-divider">
+        <h2>Predicted Performance</h2>
+      </div>
+      <div class="item item-text-wrap dashboard-chart-text-wrap">
+        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="{showTooltips: false}"></canvas>
+      </div>
     </div>
-    <div class="item item-text-wrap dashboard-chart-text-wrap">
-      <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="{showTooltips: false}"></canvas>
-    </div>
-  </div>
 
-  <div class="card">
-    <div class="item item-divider dashboard-chart-divider">
-      <h2>Portfolio Allocation</h2>
+    <div class="card">
+      <div class="item item-divider dashboard-chart-divider">
+        <h2>Portfolio Allocation</h2>
+      </div>
+      <div class="item item-text-wrap dashboard-chart-text-wrap">
+        <canvas id="doughnut" class="chart chart-doughnut" chart-data="dData" chart-labels="dLabels" chart-options="{tooltipTemplate: '<%=label%>:<%=value%>%'}"></canvas>
+      </div>
     </div>
-    <div class="item item-text-wrap dashboard-chart-text-wrap">
-      <canvas id="doughnut" class="chart chart-doughnut" chart-data="dData" chart-labels="dLabels" chart-options="{tooltipTemplate: '<%=label%>:<%=value%>%'}"></canvas>
-    </div>
-  </div>
-</ion-content>
-<ion-footer-bar class="bar-positive">
-  <div class="title" ui-sref="table">Add Funds</div>
-</ion-footer-bar>
+  </ion-content>
+
+  <ion-footer-bar ng-class="drawerClass" ng-click="toggleDrawer()">
+    <div class="title">{{fundText}}</div>
+  </ion-footer-bar>
+
+  <ion-drawer-vertical-wrapper class="drawer-content" direction="up" state="closed">
+    <ion-drawer-vertical-content>
+      <form>
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="number" placeholder="Amount">
+          </label>
+          <div class="row text-center">
+            <div class="col-50">
+              <button class="button button-assertive">Withdraw</button>
+            </div>
+            <div class="col-50">
+              <button class="button button-positive">Add Funds</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ion-drawer-vertical-content>
+  </ion-drawer-vertical-wrapper>
+</div>

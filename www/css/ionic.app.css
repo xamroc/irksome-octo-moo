@@ -9142,6 +9142,9 @@ a.button {
 .dashboard-chart-text-wrap {
   border-color: transparent; }
 
+.drawer-content {
+  background-color: white; }
+
 .ticker-container p {
   display: inline-block; }
   .ticker-container p span {

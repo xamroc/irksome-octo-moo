@@ -2,7 +2,7 @@
 
 angular.module('dashboard', ['user', 'chart.js', 'ionic.contrib.drawer.vertical'])
 
-.controller('DashboardCtrl', function($scope, $location, $http, AuthenticationService, securitiesData, $ionDrawerVerticalDelegate) {
+.controller('DashboardCtrl', function($scope, $location, $http, AuthenticationService, securitiesData, $ionDrawerVerticalDelegate, $timeout) {
 
   securitiesData.list(function(sData) {
     $scope.sData = sData.map(JSON.parse);
@@ -22,6 +22,26 @@ angular.module('dashboard', ['user', 'chart.js', 'ionic.contrib.drawer.vertical'
 
   $scope.drawerIsClosed = function() {
     return $ionDrawerVerticalDelegate.getState() === 'closed';
+  }
+
+  $scope.addAmount = function() {
+    $scope.fundText = "Working...";
+    $timeout(function() {
+      $scope.fundText = "Done!";
+    }, 1000);
+    $timeout(function() {
+      $scope.toggleDrawer();
+    }, 1500);
+  }
+
+  $scope.subtractAmount = function() {
+    $scope.fundText = "Working...";
+    $timeout(function() {
+      $scope.fundText = "Done!";
+    }, 1000);
+    $timeout(function() {
+      $scope.toggleDrawer();
+    }, 1500);
   }
 
   $scope.toggleDrawer = function() {

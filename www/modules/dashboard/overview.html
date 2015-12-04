@@ -54,14 +54,14 @@
       <form>
         <div class="list list-inset">
           <label class="item item-input">
-            <input type="number" placeholder="Amount">
+            <input type="number" min="0" placeholder="Amount">
           </label>
           <div class="row text-center">
             <div class="col-50">
-              <button class="button button-assertive">Withdraw</button>
+              <button class="button button-assertive" ng-click="subtractAmount()">Withdraw</button>
             </div>
             <div class="col-50">
-              <button class="button button-positive">Add Funds</button>
+              <button class="button button-positive" ng-click="addAmount()">Add Funds</button>
             </div>
           </div>
         </div>

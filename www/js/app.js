@@ -47,6 +47,11 @@ angular.module('app', ['ionic', 'user', 'dashboard', 'ionic.contrib.drawer.verti
       url: '/table/:tableId',
       templateUrl: 'modules/dashboard/table.detail.html'
     })
+    .state('composition', {
+      url: '/composition',
+      templateUrl: 'modules/dashboard/composition.html',
+      controller: 'CompositionCtrl'
+    })
 
   $urlRouterProvider.otherwise('/users');
 })

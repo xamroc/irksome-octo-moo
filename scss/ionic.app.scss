@@ -81,6 +81,51 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   }
 }
 
+// Dashboard Composition
+
+#composition {
+
+  .scroll {
+    height: 100%;
+  }
+
+  .compositionRow {
+    height: 80%;
+  }
+
+  .riskRow {
+    background-color: $orange-cactus;
+    height: 20%;
+
+    h3 {
+      color: $white-text;
+    }
+  }
+
+
+  h1 {
+    text-align: center;
+    color: $white-text;
+  }
+
+  .login-button {
+    background-color: $green-cactus;
+    border-color: $green-cactus;
+    text-align: center;
+
+    button {
+      background-color: $white-text;
+      color: $green-cactus;
+      border-color: $green-cactus;
+    }
+
+    button:hover {
+      background-color: $balanced;
+      color: white;
+    }
+  }
+}
+
 // Dashboard Overview
 
 .dashboard-overview-summary {

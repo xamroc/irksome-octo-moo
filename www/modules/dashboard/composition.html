@@ -1,0 +1,28 @@
+<div ng-controller="CompositionCtrl">
+  <ion-header-bar class="bar-cactus">
+    <div class="buttons">
+      <a href="#/"><button class="button button-clear"><i class="icon ion-home white-icon"></i></button></a>
+    </div>
+    <h1 class="title">Target Portfolio</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()"><i class="icon ion-log-out white-icon"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content id="composition" has-bouncing="false">
+    <div class="row compositionRow row-center">
+      <div class="col">
+        <canvas id="doughnut" class="chart chart-doughnut" chart-data="dData" chart-labels="dLabels" chart-legend="true" chart-options="{tooltipTemplate: '<%=label%>:<%=value%>%'}"></canvas>
+      </div>
+    </div>
+    <div class="row riskRow row-center">
+      <div class="col text-center">
+        <h3>{{riskString}}</h3>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="text-center">
+    <div class="row item range">
+      <input type="range" name="volume" min="1" max="5" ng-model="riskLevel" ng-change="updateDoughnut(riskLevel)">
+    </div>
+  </ion-footer-bar>
+</div>

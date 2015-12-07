@@ -9121,6 +9121,34 @@ a.button {
       background-color: #33cd5f;
       color: white; }
 
+#composition .scroll {
+  height: 100%; }
+
+#composition .compositionRow {
+  height: 80%; }
+
+#composition .riskRow {
+  background-color: #FF795B;
+  height: 20%; }
+  #composition .riskRow h3 {
+    color: #F1FFFF; }
+
+#composition h1 {
+  text-align: center;
+  color: #F1FFFF; }
+
+#composition .login-button {
+  background-color: #23DB87;
+  border-color: #23DB87;
+  text-align: center; }
+  #composition .login-button button {
+    background-color: #F1FFFF;
+    color: #23DB87;
+    border-color: #23DB87; }
+  #composition .login-button button:hover {
+    background-color: #33cd5f;
+    color: white; }
+
 .dashboard-overview-summary {
   width: 100vw;
   height: 40vh;

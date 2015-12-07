@@ -100,6 +100,47 @@ angular.module('dashboard', ['user', 'chart.js', 'ionic.contrib.drawer.vertical'
   });
 })
 
+.controller('CompositionCtrl', function($scope) {
+  var CONSERVATIVE = [10, 10, 5, 5, 70];
+  var CONSERVATIVISH = [13, 12, 5, 5, 65];
+  var NORMAL = [15, 15, 9, 6, 55];
+  var AGGRESSIVISH = [16, 16, 14, 14, 40];
+  var AGGRESSIVE = [17, 17, 18, 18, 30];
+
+  $scope.dData = NORMAL;
+  $scope.riskString = "Normal";
+
+  $scope.dLabels = ["Developed Markets", "Domestic Markets", "Emerging Markets", "Commodity", "Fixed-Income"];
+
+  $scope.updateDoughnut = function(riskLevel) {
+    switch(parseInt($scope.riskLevel)) {
+      case 1:
+        $scope.dData = CONSERVATIVE;
+        $scope.riskString = "Conservative";
+        break;
+      case 2:
+        $scope.dData = CONSERVATIVISH;
+        $scope.riskString = "Less Normal";
+        break;
+      case 3:
+        $scope.dData = NORMAL;
+        $scope.riskString = "Normal";
+        break;
+      case 4:
+        $scope.dData = AGGRESSIVISH;
+        $scope.riskString = "Less Aggressive";
+        break;
+      case 5:
+        $scope.dData = AGGRESSIVE;
+        $scope.riskString = "Aggressive";
+        break;
+      default:
+        $scope.dData = NORMAL;
+        $scope.riskString = "Normal";
+    }
+  }
+})
+
 .factory('securitiesData', function ($http) {
   return {
     list: function(callback) {

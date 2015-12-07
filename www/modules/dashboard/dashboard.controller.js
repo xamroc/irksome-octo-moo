@@ -8,8 +8,8 @@ angular.module('dashboard', ['user', 'chart.js', 'ionic.contrib.drawer.vertical'
     $scope.sData = sData.map(JSON.parse);
     var values = _.pluck($scope.sData, 'value');
     var parsedValues = values.map(JSON.parse);
-    var totalValue = _.reduce(parsedValues, function(total, x) { return total + x }, 0).toFixed(2);
-    $scope.totalValue = numeral(totalValue).format('$0,0.00');
+    $scope.total = _.reduce(parsedValues, function(total, x) { return total + x }, 0).toFixed(2);
+    $scope.totalString = numeral($scope.total).format('$0,0.00');
   });
 
   $scope.logout = function() {
@@ -30,6 +30,8 @@ angular.module('dashboard', ['user', 'chart.js', 'ionic.contrib.drawer.vertical'
       $scope.fundText = "Done!";
     }, 1000);
     $timeout(function() {
+      $scope.total = $scope.total + $scope.amountChange;
+      $scope.totalString = numeral($scope.total).format('$0,0.00');
       $scope.toggleDrawer();
     }, 1500);
   }
@@ -40,6 +42,8 @@ angular.module('dashboard', ['user', 'chart.js', 'ionic.contrib.drawer.vertical'
       $scope.fundText = "Done!";
     }, 1000);
     $timeout(function() {
+      $scope.total = $scope.total - $scope.amountChange;
+      $scope.totalString = numeral($scope.total).format('$0,0.00');
       $scope.toggleDrawer();
     }, 1500);
   }

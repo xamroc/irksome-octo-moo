@@ -9,7 +9,7 @@
 
     <div class="dashboard-overview-summary row row-center" ui-sref="table">
       <div class="col text-center">
-        <h1>{{totalValue}}</h1>
+        <h1>{{totalString}}</h1>
         <p class="uppercase">Total balance</p>
         <hr />
         <h3>+$20,942.23</h3>
@@ -54,7 +54,7 @@
       <form>
         <div class="list list-inset">
           <label class="item item-input">
-            <input type="number" min="0" placeholder="Amount">
+            <input type="number" min="0" placeholder="Amount" ng-model="amountChange">
           </label>
           <div class="row text-center">
             <div class="col-50">

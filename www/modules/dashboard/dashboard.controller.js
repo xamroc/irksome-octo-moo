@@ -59,9 +59,13 @@ angular.module('dashboard', ['user', 'chart.js', 'ionic.contrib.drawer.vertical'
     }
   }
 
-  $scope.labels = ["10", "20", "30", "40", "50", "60", "70"];
+  $scope.labelsHistory = ["2009", "2010", "2011", "2012", "2013", "2014", "2015"];
+  $scope.labelsPredicted = ["0", "5", "10", "15", "20", "25", "30"];
   $scope.series = ['Optimistic', 'Normal', 'Pessimistic'];
-  $scope.data = [
+  $scope.dataHistory = [
+    [13000, 17000, 16000, 24000, 22000, 26000, 30000]
+  ];
+  $scope.dataPredicted = [
     [30000, 27000, 30000, 34000, 32000, 36000, 40000],
     [30000, 25000, 27500, 30000, 31000, 34000, 35000],
     [30000, 20000, 21000, 23000, 19000, 22000, 31000]

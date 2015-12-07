@@ -30,7 +30,7 @@ angular.module('dashboard', ['user', 'chart.js', 'ionic.contrib.drawer.vertical'
       $scope.fundText = "Done!";
     }, 1000);
     $timeout(function() {
-      $scope.total = $scope.total + $scope.amountChange;
+      $scope.total = parseFloat($scope.total) + parseFloat($scope.amountChange);
       $scope.totalString = numeral($scope.total).format('$0,0.00');
       $scope.toggleDrawer();
     }, 1500);
